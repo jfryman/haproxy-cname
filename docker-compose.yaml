@@ -1,0 +1,33 @@
+version: '2'
+services:
+  lb:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - us
+      - au
+      - eu
+    volumes:
+      - ./test/srv/maps/domain-to-tenant.map:/data/domain-to-tenant.map
+      - ./test/srv/maps/domain-to-backend.map:/data/domain-to-backend.map
+      - ./test/srv/ssl:/data/ssl
+  server:
+    image: clue/json-server
+    ports:
+      - "8080:80"
+    volumes:
+      - ./test/srv/server/data.json:/data/db.json
+  us:
+    image: trinitronx/python-simplehttpserver
+    volumes:
+      - ./test/srv/us:/var/www:ro
+  eu:
+    image: trinitronx/python-simplehttpserver
+    volumes:
+      - ./test/srv/eu:/var/www:ro
+  au:
+    image: trinitronx/python-simplehttpserver
+    volumes:
+      - ./test/srv/au:/var/www:ro
