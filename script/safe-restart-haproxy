@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+sudo iptables -I INPUT -p tcp --dport 443 --syn -j DROP
+sleep 0.2
+sudo haproxy -D -f /etc/haproxy/haproxy.cfg -p /var/run/haproxy.pid -sf $(cat /var/run/haproxy.pid)
+sudo iptables -D INPUT -p tcp --dport 443 --syn -j DROP
