@@ -5,7 +5,7 @@ export CNAMER_MAP_FILE="/etc/auth0/maps/domain-to-tenant.map"
 export CNAMER_REGION_MAP_FILE="/etc/auth0/maps/domain-to-backend.map"
 export CNAMER_ENDPOINT=https://cnamer.int.auth0.com/mappings
 export CNAMER_SSL_DIR="/etc/auth0/ssl"
-export TOKEN=`credstash -r us-west-1 get cnamer.token`
+export CNAMER_TOKEN=`credstash -r us-west-1 get cnamer.token`
 
 python haproxy-cname-sync.py
 script/safe-restart-haproxy
