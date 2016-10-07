@@ -1,2 +1,3 @@
 *.map
 *.pem
+test/acme/.well-known/acme-challenge/*
