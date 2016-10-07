@@ -9,7 +9,6 @@ import requests
 import os
 import re
 import time
-import pprint
 
 # First Hammer
 ACME_ROOT_DIR = os.getenv('CNAMER_ACME_ROOT_DIR', '/etc/haproxy')
