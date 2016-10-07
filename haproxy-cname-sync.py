@@ -37,7 +37,6 @@ def write_file(target, contents):
         os.makedirs(file_dirname)
 
     file = open(target, "w")
-    print(target)
     file.write(contents)
     file.close()
 
