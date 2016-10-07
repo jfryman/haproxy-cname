@@ -123,10 +123,6 @@ def save_certificate(mapping, ssl_dir):
     ssl_file_content = "".join([cert, key])
     write_file(ssl_file, ssl_file_content)
 
-def cname_preflight():
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
 def main():
     """
     Main entry point for Python Application
