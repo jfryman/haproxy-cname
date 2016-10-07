@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
 export ENV=prod
-export CNAMER_MAP_FILE="/etc/auth0/maps/domain-to-tenant.map"
-export CNAMER_REGION_MAP_FILE="/etc/auth0/maps/domain-to-backend.map"
+export CNAMER_MAP_FILE="/etc/auth0/cnamer/maps/domain-to-tenant.map"
+export CNAMER_REGION_MAP_FILE="/etc/auth0/cnamer/maps/domain-to-backend.map"
 export CNAMER_ENDPOINT=https://cnamer.int.auth0.com/mappings
-export CNAMER_SSL_DIR="/etc/auth0/ssl"
+export CNAMER_SSL_DIR="/etc/auth0/cnamer/ssl"
 export CNAMER_TOKEN=`credstash -r us-west-1 get cnamer.token`
 
 python haproxy-cname-sync.py
