@@ -4,13 +4,6 @@
 #
 # Part of Auth0 October Hack-a-thon: provide CNAME support to customers
 #
-# Objectives:
-# * [X] Setup test scaffolding
-# * [X] Test for validity of HAProxy Config
-# * [ ] Call HTTP endpoint for certificate payload
-# * [ ] Parse HTTP endpoint and render HAProxy CNAME -> tenant map
-# * [ ] Parse HTTP endpoint and render HAProxy tenant -> region map
-# * [ ] Create SSL files for each client
 
 import requests
 import os
