@@ -10,9 +10,9 @@ services:
       - au
       - eu
     volumes:
-      - ./test/srv/maps/domain-to-tenant.map:/data/domain-to-tenant.map
-      - ./test/srv/maps/domain-to-backend.map:/data/domain-to-backend.map
-      - ./test/srv/ssl:/data/ssl
+      - ./test/srv/maps/domain-to-tenant.map:/etc/auth0/cnamer/maps/domain-to-tenant.map
+      - ./test/srv/maps/domain-to-backend.map:/etc/auth0/cnamer/maps/domain-to-backend.map
+      - ./test/srv/ssl:/etc/auth0/cnamer/ssl
   server:
     image: clue/json-server
     ports:

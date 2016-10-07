@@ -6,7 +6,7 @@
 #
 # Objectives:
 # * [X] Setup test scaffolding
-# * [ ] Test for validity of HAProxy Config
+# * [X] Test for validity of HAProxy Config
 # * [ ] Call HTTP endpoint for certificate payload
 # * [ ] Parse HTTP endpoint and render HAProxy CNAME -> tenant map
 # * [ ] Parse HTTP endpoint and render HAProxy tenant -> region map
@@ -68,8 +68,8 @@ def main():
 
     cname_map = map(extract_cname, mappings)
     region_map = map(extract_region, mappings)
-    # write_haproxy_map(cname_map, CNAME_MAP_FILE)
-    # write_haproxy_map(region_map, REGION_MAP_FILE)
+    #write_haproxy_map(cname_map, CNAME_MAP_FILE)
+    #write_haproxy_map(region_map, REGION_MAP_FILE)
 
     for mapping in mappings:
         save_certificate(mapping, SSL_DIR)
