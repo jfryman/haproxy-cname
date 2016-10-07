@@ -5,6 +5,7 @@ export CNAMER_MAP_FILE="./test/maps/domain-to-tenant.map"
 export CNAMER_REGION_MAP_FILE="./test/maps/domain-to-backend.map"
 export CNAMER_ENDPOINT=http://localhost:8080/db
 export CNAMER_SSL_DIR="./test/ssl"
+export CNAMER_ACME_ROOT_DIR="./test/acme"
 export TOKEN=deadbeef
 export COMPOSE_FILE=docker-compose.test.yaml
 

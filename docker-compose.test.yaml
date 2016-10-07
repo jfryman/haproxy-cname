@@ -10,10 +10,11 @@ services:
       - au
       - eu
     volumes:
+      - ./acme-http01-webroot.lua:/etc/haproxy/acme-http01-webroot.lua
+      - ./test/acme/.well-known/acme-challenge:/etc/haproxy/.well-known/acme-challenge
       - ./test/srv/maps/domain-to-tenant.map:/etc/auth0/cnamer/maps/domain-to-tenant.map
       - ./test/srv/maps/domain-to-backend.map:/etc/auth0/cnamer/maps/domain-to-backend.map
       - ./test/ssl:/etc/auth0/cnamer/ssl
-      - ./acme-http01-webroot.lua:/etc/haproxy/acme-http01-webroot.lua
   server:
     image: clue/json-server
     ports:
